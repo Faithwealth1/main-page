@@ -5,7 +5,7 @@ export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="flex w-[1280px] justify-between items-center fixed -translate-x-2/4 z-[1000] backdrop-blur-2xl bg-[rgba(8,8,8,0.90)] px-8 py-4 rounded-[30px] left-2/4 top-[60px] max-md:w-[90%] max-md:px-6 max-md:py-3 max-sm:w-[95%] max-sm:px-5 max-sm:py-3">
+    <header className="flex w-[1280px] justify-between items-center z-[1000] backdrop-blur-2xl bg-[rgba(8,8,8,0.90)] px-8 py-4 rounded-[30px] mx-auto mt-[60px] max-md:w-[90%] max-md:px-6 max-md:py-3 max-sm:w-[95%] max-sm:px-5 max-sm:py-3">
       <div className="flex w-[100px] h-[22px] justify-center items-center shrink-0">
         <img
           src="https://api.builder.io/api/v1/image/assets/TEMP/e7f40f8988e21342395919c69b43c88e03cac139?width=200"
