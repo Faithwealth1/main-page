@@ -44,13 +44,11 @@ export const Header: React.FC = () => {
         </a>
       </nav>
 
-      <Button className="max-sm:px-5 max-sm:py-2 max-sm:text-base">
+      <Button className="max-md:hidden">
         Login
-        <div className="w-[30px] h-[30px]">
-          <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" className="arrow-icon">
-            <path d="M15.1875 8.25014H1.25C0.895833 8.25014 0.598958 8.13035 0.359375 7.89076C0.119792 7.65118 0 7.3543 0 7.00014C0 6.64597 0.119792 6.3491 0.359375 6.10951C0.598958 5.86993 0.895833 5.75014 1.25 5.75014H15.1875L11.625 2.18764C11.375 1.93764 11.2552 1.64597 11.2656 1.31264C11.276 0.979303 11.3958 0.687637 11.625 0.437637C11.875 0.187637 12.1719 0.0574284 12.5156 0.0470117C12.8594 0.0365951 13.1562 0.156387 13.4062 0.406387L19.125 6.12514C19.25 6.25014 19.3385 6.38555 19.3906 6.53139C19.4427 6.67722 19.4688 6.83347 19.4688 7.00014C19.4688 7.1668 19.4427 7.32305 19.3906 7.46889C19.3385 7.61472 19.25 7.75014 19.125 7.87514L13.4062 13.5939C13.1562 13.8439 12.8594 13.9637 12.5156 13.9533C12.1719 13.9428 11.875 13.8126 11.625 13.5626C11.3958 13.3126 11.276 13.021 11.2656 12.6876C11.2552 12.3543 11.375 12.0626 11.625 11.8126L15.1875 8.25014Z" fill="#181818"/>
-          </svg>
-        </div>
+        <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" className="arrow-icon">
+          <path d="M15.1875 8.25014H1.25C0.895833 8.25014 0.598958 8.13035 0.359375 7.89076C0.119792 7.65118 0 7.3543 0 7.00014C0 6.64597 0.119792 6.3491 0.359375 6.10951C0.598958 5.86993 0.895833 5.75014 1.25 5.75014H15.1875L11.625 2.18764C11.375 1.93764 11.2552 1.64597 11.2656 1.31264C11.276 0.979303 11.3958 0.687637 11.625 0.437637C11.875 0.187637 12.1719 0.0574284 12.5156 0.0470117C12.8594 0.0365951 13.1562 0.156387 13.4062 0.406387L19.125 6.12514C19.25 6.25014 19.3385 6.38555 19.3906 6.53139C19.4427 6.67722 19.4688 6.83347 19.4688 7.00014C19.4688 7.1668 19.4427 7.32305 19.3906 7.46889C19.3385 7.61472 19.25 7.75014 19.125 7.87514L13.4062 13.5939C13.1562 13.8439 12.8594 13.9637 12.5156 13.9533C12.1719 13.9428 11.875 13.8126 11.625 13.5626C11.3958 13.3126 11.276 13.021 11.2656 12.6876C11.2552 12.3543 11.375 12.0626 11.625 11.8126L15.1875 8.25014Z" fill="#181818"/>
+        </svg>
       </Button>
 
       {/* Mobile menu button */}
@@ -63,6 +61,38 @@ export const Header: React.FC = () => {
           <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </button>
+
+      {/* Mobile menu */}
+      {isMenuOpen && (
+        <div className="absolute top-full left-0 right-0 mt-2 bg-[rgba(8,8,8,0.95)] backdrop-blur-2xl rounded-[20px] p-6 md:hidden">
+          <nav className="flex flex-col gap-4">
+            <a href="#home" className="text-white text-lg font-medium cursor-pointer hover:text-[#FFE21B] transition-colors">
+              Home
+            </a>
+            <a href="#about" className="text-white text-lg font-medium cursor-pointer hover:text-[#FFE21B] transition-colors">
+              About
+            </a>
+            <a href="#services" className="text-white text-lg font-medium cursor-pointer hover:text-[#FFE21B] transition-colors">
+              Services
+            </a>
+            <a href="#resources" className="text-white text-lg font-medium cursor-pointer hover:text-[#FFE21B] transition-colors">
+              Resources
+            </a>
+            <a href="#career" className="text-white text-lg font-medium cursor-pointer hover:text-[#FFE21B] transition-colors">
+              Career
+            </a>
+            <a href="#events" className="text-white text-lg font-medium cursor-pointer hover:text-[#FFE21B] transition-colors">
+              Events
+            </a>
+            <Button className="mt-4">
+              Login
+              <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" className="arrow-icon">
+                <path d="M15.1875 8.25014H1.25C0.895833 8.25014 0.598958 8.13035 0.359375 7.89076C0.119792 7.65118 0 7.3543 0 7.00014C0 6.64597 0.119792 6.3491 0.359375 6.10951C0.598958 5.86993 0.895833 5.75014 1.25 5.75014H15.1875L11.625 2.18764C11.375 1.93764 11.2552 1.64597 11.2656 1.31264C11.276 0.979303 11.3958 0.687637 11.625 0.437637C11.875 0.187637 12.1719 0.0574284 12.5156 0.0470117C12.8594 0.0365951 13.1562 0.156387 13.4062 0.406387L19.125 6.12514C19.25 6.25014 19.3385 6.38555 19.3906 6.53139C19.4427 6.67722 19.4688 6.83347 19.4688 7.00014C19.4688 7.1668 19.4427 7.32305 19.3906 7.46889C19.3385 7.61472 19.25 7.75014 19.125 7.87514L13.4062 13.5939C13.1562 13.8439 12.8594 13.9637 12.5156 13.9533C12.1719 13.9428 11.875 13.8126 11.625 13.5626C11.3958 13.3126 11.276 13.021 11.2656 12.6876C11.2552 12.3543 11.375 12.0626 11.625 11.8126L15.1875 8.25014Z" fill="#181818"/>
+              </svg>
+            </Button>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };
